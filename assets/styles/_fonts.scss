@@ -1,0 +1,61 @@
+@mixin helvetica {
+  font-family: HelveticaNeueCyr, "Helvetica Neue", sans-serif;
+  font-style: normal;
+}
+
+@mixin H1 {
+  @include helvetica;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin H2P {
+  @include helvetica;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin H2 {
+  @include helvetica;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin caption {
+  @include helvetica;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin caption-bold {
+  @include helvetica;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+
+@mixin text {
+  @include helvetica;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: $extra-dark;
+}

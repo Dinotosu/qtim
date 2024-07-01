@@ -1,0 +1,84 @@
+@mixin base-shadow {
+  filter: drop-shadow(4px 4px 15px rgb(0 0 0 / 5%));
+}
+
+@mixin dish-shadow {
+  box-shadow: -2.644px 5.288px 26.441px 0 rgb(0 0 0 / 6%);
+}
+
+@mixin dropdown-shadow {
+  filter: drop-shadow(0.25rem 0.25rem 0.625rem rgb(150 130 169 / 40%));
+}
+
+@mixin background-blur {
+  background: rgba(18 18 18 / 40%);
+  backdrop-filter: blur(0.1rem);
+}
+
+@mixin overflow-elipsis($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: pre-wrap;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    display: none;
+    background-color: transparent;
+  }
+}
+
+@mixin slide-animation(
+  $direction: vertical,
+  $duration: 0.5s,
+  $delay: 0,
+  $offset: 100%,
+  $init-x: 0,
+  $init-y: 0
+) {
+  $x: $init-x;
+  $y: $init-y;
+  $x_end: $init-x;
+  $y_end: $init-y;
+
+  @if $direction == horizontal {
+    $x_end: $offset;
+  }
+
+  @if $direction == vertical {
+    $y_end: $offset;
+  }
+
+  @keyframes slide-animation {
+    0% {
+      transform: translate($x, $y);
+    }
+
+    100% {
+      transform: translate($x_end, $y_end);
+    }
+  }
+
+  animation: slide-animation $duration $delay ease forwards;
+}
+
+@mixin link {
+  @include text;
+  text-decoration: none;
+  color: #000;
+}
